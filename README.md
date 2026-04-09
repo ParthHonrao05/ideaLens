@@ -1,38 +1,54 @@
-# IdeaLens – AI Startup Idea Validator
+# 🚀 IdeaLens – AI Startup Idea Validator
 
-A modern SaaS web application that validates startup ideas using the Anthropic Claude API.
+IdeaLens is a modern SaaS web application that helps users validate startup ideas instantly using AI. It analyzes ideas across multiple dimensions such as strengths, risks, target audience, improvements, and monetization strategies.
 
-## Tech Stack
-- **Next.js 14** (App Router)
-- **React 18** with hooks
-- **Tailwind CSS** for styling
-- **Anthropic Claude SDK** for AI analysis
-- **Vercel** for deployment
+---
 
-## Folder Structure
+## ✨ Features
+
+* 🧠 AI-powered startup idea analysis
+* 📊 Structured output (Pros, Cons, Audience, Improvements, Monetization)
+* ⚡ Fast and responsive UI
+* 🎨 Modern SaaS-style design (dark theme + gradients)
+* 📱 Fully responsive (mobile + desktop)
+* 🔄 Real-time analysis with loading states
+* 📋 Copy JSON results feature
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Next.js 14 (App Router), React 18
+* **Styling:** Tailwind CSS
+* **Backend:** Next.js API Routes
+* **AI Integration:** OpenRouter (GPT-3.5 Turbo)
+* **Deployment:** Vercel
+
+---
+
+## 📂 Project Structure
 
 ```
 idealens/
 ├── app/
-│   ├── layout.jsx              # Root layout (fonts, metadata)
-│   ├── page.jsx                # Landing page (/)
-│   ├── globals.css             # Global styles + CSS variables
+│   ├── layout.jsx
+│   ├── page.jsx
+│   ├── globals.css
 │   ├── analyze/
-│   │   └── page.jsx            # Analyzer page (/analyze)
+│   │   └── page.jsx
 │   └── api/
 │       └── analyze/
-│           └── route.js        # POST /api/analyze (backend)
+│           └── route.js
 ├── components/
 │   ├── Navbar.jsx
 │   ├── HeroSection.jsx
-│   ├── StatsRow.jsx
 │   ├── FeaturesSection.jsx
 │   ├── HowItWorks.jsx
 │   ├── CtaBand.jsx
 │   ├── Footer.jsx
 │   ├── AnalyzerForm.jsx
-│   ├── SkeletonLoader.jsx
-│   └── ResultCards.jsx
+│   ├── ResultCards.jsx
+│   └── SkeletonLoader.jsx
 ├── .env.example
 ├── next.config.js
 ├── tailwind.config.js
@@ -40,37 +56,59 @@ idealens/
 └── package.json
 ```
 
-## Getting Started
+---
 
-### 1. Install dependencies
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/idealens.git
+cd idealens
+```
+
+### 2. Install dependencies
+
 ```bash
 npm install
 ```
 
-### 2. Set up environment variables
-```bash
-cp .env.example .env.local
-```
-Edit `.env.local`:
-```env
-ANTHROPIC_API_KEY=sk-ant-your-key-here
-```
-Get your key at: https://console.anthropic.com/
+### 3. Setup environment variables
 
-### 3. Run the dev server
+Create a `.env.local` file:
+
+```env
+OPENROUTER_API_KEY=your_api_key_here
+```
+
+👉 Get your API key from OpenRouter
+
+---
+
+### 4. Run development server
+
 ```bash
 npm run dev
 ```
-Visit http://localhost:3000
 
-## API Endpoint
+Visit: http://localhost:3000
 
-### POST /api/analyze
-Request:
+---
+
+## 🔌 API Endpoint
+
+### POST `/api/analyze`
+
+#### Request:
+
 ```json
-{ "idea": "Your startup idea..." }
+{
+  "idea": "Your startup idea"
+}
 ```
-Response:
+
+#### Response:
+
 ```json
 {
   "pros": [],
@@ -81,10 +119,51 @@ Response:
 }
 ```
 
-## Deploy to Vercel
-1. Push to GitHub
-2. Import on vercel.com
-3. Add `ANTHROPIC_API_KEY` in Environment Variables
-4. Deploy
+---
 
-Never commit `.env.local` — it's already in `.gitignore`.
+## 🚀 Deployment (Vercel)
+
+1. Push code to GitHub
+2. Go to Vercel and import the repository
+3. Add environment variable:
+
+```env
+OPENROUTER_API_KEY=your_api_key_here
+```
+
+4. Click **Deploy**
+
+---
+
+## ⚠️ Important Notes
+
+* Do NOT commit `.env.local`
+* API usage may incur minimal cost depending on requests
+* Designed for educational/demo purposes
+
+---
+
+## 🎯 Future Improvements
+
+* 📊 Idea scoring system (AI-based)
+* 📈 Feasibility analysis
+* 🔐 User authentication
+* 💳 Credits / usage tracking system
+* 📄 Export reports (PDF)
+
+---
+
+## 👨‍💻 Author
+
+Developed as a SaaS project using modern web technologies and AI integration.
+
+---
+
+## ⭐ Acknowledgements
+
+* Next.js
+* Tailwind CSS
+* OpenRouter AI
+* Vercel
+
+---
